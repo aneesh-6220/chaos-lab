@@ -115,12 +115,12 @@ def show_footer():
     st.markdown(
         """
         <div class="footer">
-            Built by Aneesh Mahatekar
+            Educational simulation tool · Not financial or scientific advice · 
+            <a href="https://github.com/aneesh-6220/chaos-lab" target="_blank">Source code</a>
         </div>
         """,
         unsafe_allow_html=True,
     )
-
 
 def show_home_tab():
     st.header("Pick an experiment")
