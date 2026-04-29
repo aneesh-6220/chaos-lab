@@ -1,147 +1,150 @@
 # Chaos Lab
 
-Live app: _Add your Streamlit Community Cloud link here after deployment._
+Live app: https://chaos-lab.streamlit.app
 
-Chaos Lab is an interactive probability playground for exploring randomness through gambler's ruin, random walks, Brownian motion, and intuition-testing simulations.
+Chaos Lab is an interactive simulation playground for exploring randomness, probability, and stochastic processes through hands-on experiments.
 
-Built by Aneesh Mahatekar
+Instead of presenting fixed results, the app lets you run simulations, adjust assumptions, and observe how outcomes change. The goal is to build intuition about how simple random rules can produce complex and often unintuitive behavior.
 
-The project is built for a Grade 10 Python learner who wants a visual, hands-on app that feels more like a math lab than a statistics dashboard. Each section is a small experiment: choose settings, run the simulation, study the chart, and read what to try next.
+---
+
+## Overview
+
+Chaos Lab is structured as a set of small experiments:
+
+* **Gambler’s Ruin** — survival vs. ruin under repeated bets
+* **Random Walk** — how variance grows over time
+* **Brownian Motion** — chaotic motion from small random steps
+* **Intuition vs Reality** — test your probability intuition
+
+Each experiment follows the same loop:
+
+1. Choose parameters
+2. Run simulation
+3. Observe outputs
+4. Adjust and compare
+
+---
 
 ## Features
 
-- Streamlit app with clear experiment navigation
-- Controls placed inside each experiment instead of one global sidebar
-- Gambler's ruin simulation with risk interpretation
-- Random walk playground with path chart and final-position histogram
-- Brownian motion explorer with colorful 2D particle paths
-- Intuition vs Reality mini challenge with feedback
-- Beginner-readable Python modules for simulation logic
-- Simple custom CSS for a more polished visual identity
-- Safe input limits for Streamlit Community Cloud
+* Clean, experiment-based UI (no global control clutter)
+* Interactive parameter controls inside each experiment
+* Multiple simulation types with consistent structure
+* Path visualizations and distribution plots
+* Interpretation-focused explanations (“what to notice”)
+* Input limits for smooth performance on Streamlit Cloud
+* Modular Python structure separating UI and simulation logic
+
+---
 
 ## Screenshots
 
-Screenshots can be added to the `screenshots/` folder after running the app.
+Add screenshots to `screenshots/` after deployment.
 
-Suggested screenshots:
+Suggested:
 
-- Home page experiment cards
-- Gambler's ruin sample paths and metrics
-- Random walk path cloud and histogram
-- Brownian motion particle paths
-- Intuition vs Reality challenge result
+* Home overview
+* Gambler’s ruin paths + metrics
+* Random walk + histogram
+* Brownian motion particle plot
+* Intuition vs Reality result
+
+---
 
 ## Experiments
 
-### Gambler's Ruin
+### Gambler’s Ruin
 
-The player starts with money and repeatedly makes the same size bet. A win adds money; a loss subtracts money. The simulation stops when the player reaches zero, reaches the target, or hits the maximum number of rounds.
+A player repeatedly makes fixed-size bets. Each round results in a gain or loss.
 
-Things to try:
+The simulation stops when:
 
-- Change win probability from `0.50` to `0.49`.
-- Increase the bet size.
-- Move the target farther away.
+* money reaches zero (ruin)
+* target is reached
+* maximum rounds are hit
 
-This experiment shows how small probability changes can matter when repeated many times.
+This experiment shows how:
+
+* small probability edges matter
+* bet size affects risk
+* long-term survival is not guaranteed even in “fair” games
+
+---
 
 ### Random Walk
 
-A path starts at zero. At every step, it moves up or down, with optional drift pushing it slightly in one direction.
+A value starts at zero and moves step-by-step with random variation.
 
-Things to try:
+Optional drift shifts the expected direction, but randomness still dominates.
 
-- Increase the number of steps.
-- Set drift to a small positive or negative value.
-- Compare the path chart with the histogram of final positions.
+Key idea:
 
-This experiment shows how randomness creates spread, even when there is no preferred direction.
+> Variance increases over time, even when expected change is zero.
+
+---
 
 ### Brownian Motion
 
-Particles start at the origin. On each step, every particle receives a random x push and a random y push.
+Particles move in 2D space with small random displacements each step.
 
-Things to try:
+There is no direction or control, but paths appear complex and structured.
 
-- Increase the number of steps.
-- Increase the step size.
-- Increase the number of particles.
+This connects to:
 
-This experiment connects to physics and diffusion. The paths look chaotic because many tiny random movements accumulate over time.
+* diffusion
+* stochastic processes
+* continuous random motion
+
+---
 
 ### Intuition vs Reality
 
-The user guesses the probability of ruin before running the simulation. The app then reveals the simulated probability and gives feedback based on the error.
+You estimate the probability of ruin before running a simulation.
 
-This turns probability into a small challenge and helps build better intuition.
+The app compares:
+
+* your estimate
+* simulated result
+
+This highlights how intuition often misjudges probabilistic systems.
+
+---
 
 ## What I Learned
 
-This project practices:
+* Structuring a project into UI and simulation layers
+* Using NumPy for repeatable stochastic simulations
+* Visualizing distributions and paths with Matplotlib
+* Estimating probabilities through repeated trials
+* Designing interactive systems instead of static outputs
+* Writing explanations that guide exploration, not just describe results
 
-- Splitting Streamlit UI code from simulation logic
-- Using NumPy to generate repeatable random simulations
-- Building Matplotlib charts for paths and histograms
-- Estimating probability by counting repeated outcomes
-- Designing an app around exploration instead of only displaying results
-- Writing explanations that help a beginner understand what to change and why
+---
 
-## How to Run Locally
+## Running Locally
 
-1. Open a terminal.
-2. Move into the project folder:
+```bash
+cd chaos-lab
+python -m venv .venv
+source .venv/bin/activate   # macOS/Linux
+pip install -r requirements.txt
+streamlit run app.py
+```
 
-   ```bash
-   cd chaos-lab
-   ```
+---
 
-3. Create a virtual environment:
+## Deployment
 
-   ```bash
-   python -m venv .venv
-   ```
+Deployed via Streamlit Community Cloud from GitHub.
 
-4. Activate the virtual environment:
+Set main file to:
 
-   On macOS or Linux:
+```text
+app.py
+```
 
-   ```bash
-   source .venv/bin/activate
-   ```
-
-   On Windows:
-
-   ```bash
-   .venv\Scripts\activate
-   ```
-
-5. Install the required packages:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-6. Run the app:
-
-   ```bash
-   streamlit run app.py
-   ```
-
-## How to Deploy on Streamlit Community Cloud
-
-1. Put this project in a GitHub repository.
-2. Go to [Streamlit Community Cloud](https://streamlit.io/cloud).
-3. Choose "New app".
-4. Select the repository and branch.
-5. Set the main file path to:
-
-   ```text
-   app.py
-   ```
-
-6. Click deploy.
-7. Copy the deployed app link into the Live app section at the top of this README.
+---
 
 ## Project Structure
 
@@ -152,26 +155,34 @@ chaos-lab/
 ├── README.md
 ├── .gitignore
 ├── screenshots/
-│   └── .gitkeep
 └── src/
-    ├── __init__.py
     ├── gambler.py
     ├── random_walk.py
     ├── brownian.py
     └── metrics.py
 ```
 
+---
+
 ## Limitations
 
-- Simulation results are estimates, not exact mathematical proofs.
-- The input controls are capped so the app stays responsive.
-- Brownian motion is simplified and does not model every detail of real physics.
-- Streamlit forms mean changes apply after pressing the run button in each experiment.
+* Simulations approximate probability; results vary by run
+* Simplified models (not full physical or financial systems)
+* Performance constraints limit simulation size
+* Brownian motion is a discrete approximation
+
+---
 
 ## Future Improvements
 
-- Add Brownian motion animation.
-- Add exact gambler's ruin formulas for comparison.
-- Add a two-dimensional grid random walk.
-- Add downloadable simulation summaries.
-- Add a quiz mode with multiple probability challenges.
+* Brownian motion animation
+* Analytical gambler’s ruin formulas
+* 2D grid-based random walk
+* Exportable simulation results
+* Expanded intuition-testing scenarios
+
+---
+
+## Disclaimer
+
+This project is for educational purposes only.
