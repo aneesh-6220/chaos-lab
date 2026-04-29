@@ -2,6 +2,8 @@
 
 Live app: https://chaos-lab.streamlit.app
 
+Note: The app may take a few seconds to load if it has been inactive.
+
 Chaos Lab is an interactive simulation playground for exploring randomness, probability, and stochastic processes through hands-on experiments.
 
 Instead of presenting fixed results, the app lets you run simulations, adjust assumptions, and observe how outcomes change. The goal is to build intuition about how simple random rules can produce complex and often unintuitive behavior.
