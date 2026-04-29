@@ -40,15 +40,20 @@ Each experiment follows the same loop:
 
 ## Screenshots
 
-Add screenshots to `screenshots/` after deployment.
+### Home
+![Home](screenshots/home.png)
 
-Suggested:
+### Gambler’s Ruin
+![Gambler's Ruin](screenshots/gamblers-ruin.png)
 
-* Home overview
-* Gambler’s ruin paths + metrics
-* Random walk + histogram
-* Brownian motion particle plot
-* Intuition vs Reality result
+### Random Walk
+![Random Walk](screenshots/random-walk.png)
+
+### Brownian Motion
+![Brownian Motion](screenshots/brownian-motion.png)
+
+### Intuition vs Reality
+![Intuition vs Reality](screenshots/intuition-vs-reality.png)
 
 ---
 
